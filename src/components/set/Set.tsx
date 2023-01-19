@@ -13,19 +13,21 @@ export type SetType={
 }
 
 export const Set=(props:SetType)=>{
-
     return(
         <div className={s.counterBlock}>
             <div className={s.valueBlock}>
                 <DisplaySet title={'start value:'}
                             onChange={props.startValueHandler}
                             value={props.startValue}
-                            compere={props.startValue===props.maxValue}
+                            compere={props.maxValue===props.startValue}
+                            maxError={props.maxValue<props.startValue}
+
                             />
                 <DisplaySet title={'max value:'}
                             onChange={props.maxValueHandler}
                             value={props.maxValue}
-                            compere={props.startValue===props.maxValue}
+                            compere={props.maxValue===props.startValue}
+                            maxError={props.maxValue<props.startValue}
                             />
             </div>
             <div className={s.btnBlock}>

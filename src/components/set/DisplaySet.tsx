@@ -8,12 +8,15 @@ type displayPropsType={
     onChange:(status:string)=>void
     value: number
     compere: boolean
+    maxError: boolean
 }
 
 export const DisplaySet=(props:displayPropsType)=>{
 
     const classInput = `${s.inputBlock}
-     ${props.compere || props.value < 0 ? s.displayError : s.inputBlock}`
+     ${props.compere || 
+       props.value < 0 || 
+       props.maxError ? s.displayError : s.inputBlock}`
 
     return (<div className={s.displayBlock}>
             <label>{props.title}</label>

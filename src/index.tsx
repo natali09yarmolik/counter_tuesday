@@ -2,10 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from "./App";
+import AppRedux from "./AppRedux";
+import {Provider} from "react-redux";
+import {store} from "./store";
 
 
 ReactDOM.render(
-    <App />, document.getElementById('root')
+    <Provider store={store}><AppRedux /></Provider>
+    , document.getElementById('root')
 );
-// В типе UserPropsType у функции deleteUser в параметрах указан тип "any".
-// Какой тип было бы указать правильнее?
+
