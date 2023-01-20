@@ -1,14 +1,20 @@
-const initState=0
+type stateType={
+    num:number
+}
+const initState={
+    num: 0
+}
 
-export const MaxReducer=(state:number=initState, action:actionType):number=>{
+
+export const MaxReducer=(state:stateType=initState, action:actionType)=>{
     switch(action.type){
         case "ADD-NUMBER":
         {
-            const maxValue=state+1
+            const maxValue=state.num+1
             return maxValue
         }
         case "DELETE-NUMBER":{
-            const maxValue=state-1
+            const maxValue=state.num-1
             return maxValue
         }
     }

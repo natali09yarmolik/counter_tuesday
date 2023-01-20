@@ -1,13 +1,18 @@
-const initState=0
+type stateType={
+    num:number
+}
+const initState={
+    num: 0
+}
 
-export const StartReducer=(state:number=initState, action:actionType):number=>{
+export const StartReducer=(state:stateType=initState, action:actionType)=>{
     switch(action.type){
         case "ADD-NUMBER-START":{
-            let copyState=state+1
+            let copyState=state.num+1
             return copyState
         }
         case "DELETE-NUMBER-START":{
-            let copyState=state-1
+            let copyState=state.num-1
             return copyState
         }
     } return state

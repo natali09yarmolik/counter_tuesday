@@ -1,6 +1,11 @@
-const initState=0 //можно ли сюда передать переменную?
+type stateType={
+    num:number
+}
+const initState={
+    num: 0
+}
 
-export const CounterReducer=(state:number=initState, action:actionType):number=>{
+export const CounterReducer=(state:stateType=initState, action:actionType)=>{
 
     switch(action.type){
         case "ADD-COUNT":{
